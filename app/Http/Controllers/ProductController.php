@@ -17,4 +17,9 @@ class ProductController extends Controller
         $product->categories()->attach($category);
         return 'Success';
     }
+    public function getdata()
+    {
+      $product=Product::with('categories')->get();
+      return $product;
+    }
 }
